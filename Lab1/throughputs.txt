@@ -1,0 +1,4 @@
+7 Mbps
+12 Mbps
+15 Mbps
+32 Mbps
