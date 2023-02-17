@@ -35,21 +35,12 @@ while True:
 	for socks in read_sockets:
 		if socks == client_socket:
 
-			# receive message from client and display it on the server side 
-			# also handle exceptions here if there is no message from the 
-			# client, you should exit.
-				
-			### write your code here ###
 			try:
 				message = client_socket.recv(2048).decode()
 				print(message)
 			except:
 				print("No message from the server.")
 				sys.exit()
-    
-
-
-			### your code ends here ###
 
 		else:
 			#takes inputs from the user

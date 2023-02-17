@@ -64,11 +64,7 @@ def main():
 	serverPort = 12000
 	serverSocket = socket(AF_INET,SOCK_STREAM)
 	try:
-		# Use the bind function wisely!
-		### Write your code here ###
 		serverSocket.bind(('', serverPort))
-		### Your code ends here ###
-		
 	except: 
 		print("Bind failed. Error : ")
 		sys.exit()
@@ -76,9 +72,7 @@ def main():
 	print(f"[LISTENING] server is listening on {gethostbyname(gethostname())}")
 	print ('The server is ready to receive')
 	while True:
-		### Write your code here ###
 		connectionSocket, addr =   serverSocket.accept()
-		### You code ends here ###
 		 
 		print('Server connected by ', addr) 
 		print('at ', now())
