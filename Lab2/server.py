@@ -33,10 +33,10 @@ def handleClient(connection, addr):
 	
 	try:
 		while True:
-			message = connection.recv(2048).decode()
+			message = connection.recv(2048).decode().strip()
 			print (now() + " " +  str(addr) + "#  ", message)
    
-			if message == "exit" or not message:
+			if message == "exit":
 				print(f"{addr} har left the server.")
 				broadcast(connection, f"{addr} har left the server.")
 				break
@@ -44,7 +44,6 @@ def handleClient(connection, addr):
 			broadcast(connection, f"[{addr}] {message}")
 			connection.send("Message recieved".encode())
 	except:
-		connection.close()
 		all_client_connections.remove(connection)
 		
 

@@ -37,9 +37,15 @@ while True:
 
 			try:
 				message = client_socket.recv(2048).decode()
+				if not message: #when data doesn't get a connection to a server
+					print("Connection to server lost. Exiting...") 
+					break
+				if "has left the chat" in message: #when a client has entered the "exit" msg 
+					print(message)
+					break
 				print(message)
-			except:
-				print("No message from the server.")
+			except socket.error as e:
+				print("No message from the server.", e)
 				sys.exit()
 
 		else:
@@ -53,4 +59,4 @@ while True:
 
 			
 client_socket.close()
-        
+		
