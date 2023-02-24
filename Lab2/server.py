@@ -37,8 +37,8 @@ def handleClient(connection, addr):
 			print (now() + " " +  str(addr) + "#  ", message)
    
 			if message == "exit":
-				print(f"{addr} har left the server.")
-				broadcast(connection, f"{addr} har left the server.")
+				print(f"{addr} has left the server.")
+				broadcast(connection, f"{addr} has left the server.")
 				break
 			
 			broadcast(connection, f"[{addr}] {message}")
