@@ -9,7 +9,7 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # write server ip and port, and connect
 clientPort = 12000
-server = '127.0.0.1'
+server = socket.gethostbyname(socket.gethostname())
 addr = (server, clientPort)
 
 
