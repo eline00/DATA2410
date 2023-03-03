@@ -49,14 +49,13 @@ PORT = 6789
 # attempting to bind the socket to the host and port
 try:
     serverSocket.bind(('', PORT))
+    # printing that the server is listening and ready to serve
+    print(f"[LISTENING] server is listening on {gethostbyname(gethostname())}")
+    print('Ready to serve...')
 except:
     print("Bind failed. Error: " )
 
 serverSocket.listen(1)
-
-# printing that the server is listening and ready to serve
-print(f"[LISTENING] server is listening on {gethostbyname(gethostname())}")
-print('Ready to serve...')
 
 while True:
     # accepts incoming client connections
@@ -66,3 +65,18 @@ while True:
     thread.start_new_thread(handleClient, (connectionSocket, addr)) 
 serverSocket.close()
 
+
+"""
+RUN EXAMPEL:
+Terminal > python server.py
+[LISTENING] server is listening on 127.0.0.1
+Ready to serve...
+
+
+Then after some client connects:
+[LISTENING] server is listening on 127.0.0.1
+Ready to serve...
+[NEW CONNECTION] ('127.0.0.1', 63978) connected.
+[NEW CONNECTION] ('127.0.0.1', 63985) connected.
+[NEW CONNECTION] ('127.0.0.1', 63986) connected.
+"""

@@ -37,3 +37,27 @@ print(message.decode())
 # closing the socket and exiting 
 clientSocket.close()
 sys.exit()
+
+"""
+RUN EXAMPEL:
+Terminal > python Oblig1/webclient.py 127.0.0.1 6789 Oblig1/index.html
+HTTP/1.1 200 OK
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Oblig1</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>This is my oblig1 html</p>
+</body>
+
+
+With a filename that does not exist in the directory:
+Terminal > python Oblig1/webclient.py 127.0.0.1 6789 Oblig1/index2.html
+HTTP/1.1 404 Not Found
+
+<html><body><h1>404 Not Found</h1></body></html>
+
+"""
