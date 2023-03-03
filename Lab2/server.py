@@ -71,7 +71,7 @@ def main():
 	print(f"[LISTENING] server is listening on {gethostbyname(gethostname())}")
 	print ('The server is ready to receive')
 	while True:
-		connectionSocket, addr =   serverSocket.accept()
+		connectionSocket, addr =  serverSocket.accept()
 		 
 		print('Server connected by ', addr) 
 		print('at ', now())
